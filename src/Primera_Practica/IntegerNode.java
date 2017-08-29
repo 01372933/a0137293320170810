@@ -9,18 +9,19 @@ package Primera_Practica;
  *
  * @author BlancaFlor
  */
-public class IntegerNodo {
+public class IntegerNode {
+
     public int value;
-    public IntegerNodo next;
+    public IntegerNode next;
     
-    public IntegerNodo(){
-        this.value=0;
-        this.next=null;
+    public IntegerNode(){
+        value=0;
+        next=null;
     }
     
-    public IntegerNodo(int value){
+    public IntegerNode(int value){
         this.value=value;
-        this.next=null;
+        next=null;
     }
     
 }
