@@ -9,7 +9,10 @@ package Primera_Practica;
  *
  * @author BlancaFlor
  */
-public class Main {
+public class Main<Characteres> {
+}
+        return true;
+    }
 
         
         public static void main(String[] args) {
@@ -54,6 +57,7 @@ public class Main {
 		System.out.println(iList.indexOf(1));
 	}
 
+        
         
         
         
