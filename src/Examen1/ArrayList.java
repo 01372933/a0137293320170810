@@ -1,7 +1,6 @@
 package Examen1;
 
 
-import java.lang.IndexOutOfBoundsException;
 public class ArrayList<E> implements List<E> {
 	public Object[] top;
 	private int size;
@@ -28,7 +27,7 @@ public class ArrayList<E> implements List<E> {
 	private void reserveExtraCapacity(int extraCapacity) {
             
             if (this.size==top.length){
-                Object[] NTop= new Object[top.length+ this.extraCapacity];
+                Object[] NTop= new Object[top.length+ extraCapacity];
                 
                 for (int i=0; i<=top.length;i++){
                     NTop[i]=this.top[i];
@@ -48,7 +47,7 @@ public class ArrayList<E> implements List<E> {
 	 * reserveExtraCapacity is called using the instance variable extraCapacity.
 	 */
 	private void ensureCapacity() {
-            if(size()>=top.length){
+            if(this.size()>=top.length){
                 reserveExtraCapacity(extraCapacity);
             }
             
@@ -73,7 +72,7 @@ public class ArrayList<E> implements List<E> {
                 } //me pRECE QUE CON ESTO YA HE DEJADO EL INDICE QUE ME PIDEN LIBRE
             }
             
-	}
+	}}
 	
 	@Override
 	public void addFirst(E e) {
@@ -82,7 +81,7 @@ public class ArrayList<E> implements List<E> {
                 top[size-1]=top[size];
                 size--;
             }
-            top[0]=first;
+            top[0]=e;
 		size++;
 	}
 
@@ -90,7 +89,7 @@ public class ArrayList<E> implements List<E> {
 	public void addLast(E e) {
             ensureCapacity();
             
-            top[size]=last;
+            top[size]=e;
                     size++;
 	}
 
@@ -162,6 +161,5 @@ public class ArrayList<E> implements List<E> {
 		returnValue += "]";
 		return returnValue;
 	}
-		return null;
 	}
 

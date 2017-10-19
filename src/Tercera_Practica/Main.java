@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Tercera_Practica;
+import java.util.Arrays;
 
 /**
  *
  * @author BlancaFlor
  */
 public class Main {
-    public static boolean isPalindrome(String word){
+    /**public static boolean isPalindrome(String word){
         LinkedList<Character> letters= new LinkedList();
         
         for(int i=0; i<word.length();i++){
@@ -26,10 +27,111 @@ public class Main {
         letters.removeFirst();
         letters.removeLast();
     }
+    }*/
+    public static int linearSearch(int[] e, int num){
+                
+                for (int i=0; i<=e.length; i++){
+                    return e[i];
+                    
+                    
+                }
+                
+                return -1;
+            }
+    
+    public static int binariSearch(int[] e, int num){
+        int min=0, max=e.length-1,  mid=(max-min)/2;
+        while (num!=e[num]){
+            
+            if(num>=e[mid]){
+               min=mid;
+               mid=(max-min)/2;
+               
+            }
+            else{
+                
+            }
+            
+        }
+        return 0;
+        
     }
+    
+    public static void shiftRight(int[] values, int start, int end){
+        int temp=values[end];
+        for (int i=end; i<=start; i-- ){
+            values[i]=values[i-1];
+         }
+        values[start]=temp;
+        
+    
+    }
+    public static void insertionsort(int[] values){
+        for(int i=1;i<values.length ; i++){
+            if(values[i-1]<values[i]){
+                for(int j=0;j<i;j++ ){
+                    int temp=values[i];
+                    shiftRight(values,j,i);
+                    values[j]=temp;
+                
+            }
+                
+            }
+            
+        }
+        
+    }
+    public static void selectionSort(int[] values){
+        int min= values[0];
+        
+        for (int i=0; i<values.length;i++){
+            if (values[i]< min){
+                min=values[i];
+                System.out.println(Arrays.toString(values));
+                for(int j=0; j<i;j++){
+                    values[i]=values[j];
+                    values[0]=min;
+                    System.out.println(Arrays.toString(values));
+
+                }
+            }
+                
+                
+            }
+        }
+    public static void buebbleSort(int[] values){
+        int var=1;
+        int may=values[0];
+        while(var!=values.length){
+            may=values[0];
+            for( int i=1; i<=values.length-var;i++){
+                
+                if(values[i]<may){
+                    values[i-1]=values[i];
+                    values[i]=may;
+                }
+                else if(values[i]>= may){
+                    may=values[i];
+                }
+            }
+            var++;
+        }
+    }
+    
+    public static void makeHeap(int[] values){
+        for( int i=0; i<values.length; i++){
+            int index=i;
+            while( index !=0){
+                int parent= (index-1)/2;
+                
+            }
+        }
+    }
+        
     
 
 	public static void main(String[] args) {
+            /*
 		System.out.println("** TEST CIRCULAR DOUBLY-LINKEDLIST CLASS **");
 		System.out.println("\t** USING INTEGERS **");
 		LinkedList<Integer> iList = new LinkedList<Integer>();
@@ -146,7 +248,13 @@ public class Main {
 		System.out.println(strLinkedList);
 		strLinkedList.remove("World");
 		System.out.println(strLinkedList);
-		System.out.println();
+		System.out.println();*/
+            int[] prueba={20,52,12,98,76,-4};
+            int[] empty=new int[0];
+            System.out.println(Arrays.toString(prueba));
+            buebbleSort(prueba);
+            System.out.println(Arrays.toString(prueba));
+            
 	}
     
 }
